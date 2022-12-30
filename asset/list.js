@@ -104,9 +104,12 @@ async function listAssets(data, makeZip) {
 module.exports = function (req, res, url) {
 	var makeZip = false;
 	switch (url.pathname) {
-		case "/goapi/getUserAssets/":
+                case "/goapi/getCommunityAssets/":
+                case "/goapi/searchCommunityAssets/":
+		case "/goapi/getUserAssets/": {
 			makeZip = true;
 			break;
+                }
 		case "/goapi/getUserAssetsXml/":
 			break;
 		default:
